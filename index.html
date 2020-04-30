@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta name="author" content="Matheus Victor"/>
+    <meta charset="utf-8"/>
+    <title>Citizen_four</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/img/favicon_addUser.png"/>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="nav-buttons-right">
+          <a class="nav-button glow" href="#cadastro">Início</a>		
+          <a class="nav-button glow" href="#">Selecionar adultos</a>		
+          <a class="nav-button glow" href="#filtrarUf">Filtrar por Estado</a>		
+          <a class="nav-button glow" href="#pesquisarCpf">Pesquisar por CPF</a>		
+          <a class="nav-button glow" href="#remocao">Remover cidadão</a>
+          <a class="nav-button glow" href="#">Consultar crianças vivas</a>
+        </div>
+    </nav>
+</header>
+
+<section id="cadastro">
+
+  <div class="container">
+    <h1>Cadastro de Usuário</h1>
+    <hr>
+  </div>
+
+<form id="formCadastro">
+    <div>
+      <label for="nome"><b>Nome</b></label>
+      <input type="text" placeholder="Insira seu nome" name="nome" id="nome" required>
+    </div>
+
+    <div>
+      <label for="cpf"><b>CPF</b></label>
+      <input type="text" placeholder="Insira seu CPF (somente números)" name="cpf" required>
+    </div>
+
+    <div>
+      <label for="idade"><b>Idade</b></label>
+      <input type="text" placeholder="Digite sua idade" name="idade">
+    </div>
+
+    <div>
+      <label for="cidade"><b>Cidade</b></label>
+      <input type="text" placeholder="Informe sua cidade" name="cidade">
+    </div>
+
+    <div>
+      <label for="uf"><b>Estado</b></label>
+      <input type="text" placeholder="Informe o Estado" name="uf">
+    </div>
+
+    <div>
+      <label for="cep"><b>CEP</b></label>
+      <input type="text" placeholder="Informe o CEP (somente números)" name="cep">
+    </div>
+    
+  <div>
+    <label for="genero"><b>Gênero</b></label>
+    <select name="genero" style="width:20%">
+        <option value="feminino">Feminino</option>
+        <option value="masculino">Masculino</option>
+        <option value="n-binario">Outro</option>
+        <option value="">Prefiro não informar</option>
+    </select>
+
+    <label for="estaVivo" style="margin-left:2em"><b>Está vivo(a)?</b></label>
+    <select name="estaVivo" style="width:20%">
+        <option value="true">Sim</option>
+        <option value="false">Não</option>
+    </select>
+  </div>
+
+    <div class="clearfix">
+      <button type="submit" class="signupbtn" onclick="adicionarPessoa()">Cadastrar</button>
+      <button type="reset" class="cancelbtn">Cancelar</button>
+    </div>
+</form>
+</section>
+
+<section id="remocao">
+
+  <div class="container">
+    <h1>Remoção de Usuário</h1>
+    <hr>
+  </div>
+
+<form id="delUsuario">
+    <div>
+      <label for="cpf"><b>CPF</b></label>
+      <input type="text" placeholder="Insira seu CPF (somente números)" name="delCpf" required>
+    </div>
+
+    <div class="clearfix">
+      <button type="submit" class="signupbtn" onclick="removerPessoa()">Remover</button>
+      <button type="reset" class="cancelbtn">Cancelar</button>
+    </div>
+</form>
+</section>
+
+<section id="pesquisarCpf">
+
+  <div class="container">
+    <h1>Pesquisar Usuário</h1>
+    <hr>
+  </div>
+
+<form id="pesqUsuario">
+    <div>
+      <label for="cpf"><b>CPF</b></label>
+      <input type="text" placeholder="Insira seu CPF (somente números)" name="pesqCpf" required>
+    </div>
+
+    <div class="clearfix">
+      <button type="submit" class="signupbtn" onclick="pesquisarPessoa()">Pesquisar</button>
+      <button type="reset" class="cancelbtn">Cancelar</button>
+    </div>
+</form>
+</section>
+
+<section id="filtrarUf">
+
+  <div class="container">
+    <h1>Filtrar por Estado</h1>
+    <hr>
+  </div>
+
+<form id="pesqUsuario">
+    <div><label><b>Estado</b></label>
+      <select name="genero" style="width:20%">
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Matro Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+      </select>
+    </div>
+
+    <div class="clearfix">
+      <button type="submit" class="signupbtn" onclick="filtrarEstado()">Pesquisar</button>
+      <button type="reset" class="cancelbtn">Cancelar</button>
+    </div>
+</form>
+</section>
+
+<footer>
+  <div>
+    <a href="#cadastro"><i class="arrow"></i></a>
+  </div>
+  <div>
+    Processo #pluginfo2019 :: InfoJr. - UFBA :: Trainee: Matheus Victor 
+  </div>
+</footer>
+
+<!-- Link do script das funções -->
+<script type="text/javascript" src="assets/js/functions.js"></script> 
+
+</body>
+</html>
